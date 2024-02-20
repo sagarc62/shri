@@ -14,4 +14,4 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'airpro.settings')
 
 application = get_wsgi_application()
-#pushpa pushparah zukega nahi
+#jagruti my best friend
