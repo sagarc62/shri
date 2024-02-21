@@ -76,8 +76,8 @@ WSGI_APPLICATION = 'airpro.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'root',
-        'USER':'sagarc62@gmail.com',
+        'NAME': 'airdata',
+        'USER':'root',
         'PASSWORD':'8055343557',
         'HOST':'localhost',
         'PORT':'3306'
