@@ -19,6 +19,9 @@ class Airport_admin(admin.ModelAdmin):
 class Booking_admin(admin.ModelAdmin):
     fields=['passenger','date','source','destination','travel_class']
 
+    def passenger_name(self,obj):
+        return obj.Passenger.first_name
+
 admin.site.register(Passenger,Passenger_Admin)
 admin.site.register(City,City_Admin)
 admin.site.register(Airport,Airport_admin)

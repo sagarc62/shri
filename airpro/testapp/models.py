@@ -21,7 +21,7 @@ class Passenger(models.Model):
     age=models.PositiveSmallIntegerField()
     gender=models.CharField(max_length=10,choices=(('Male','Male'),('Female','Female')))
     def __str__(self):
-        return self.first_name
+        return f'{self.first_name} {self.last_name}'
 
 
 # class Source_city(models.Model):
@@ -41,3 +41,7 @@ class Booking(models.Model):
 
     destination = models.OneToOneField(Airport,related_name='destination', on_delete=models.CASCADE)
     travel_class=models.CharField(max_length=10,choices=(('Premium','Premium'),('Economy','Economy')))
+    def __str__(self):
+        return self.passenger
+
+
