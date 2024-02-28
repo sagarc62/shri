@@ -10,6 +10,7 @@ class Booking_Listview(APIView):
     def get(self,request,*args,**kwargs):
         queryset=Booking.objects.all()
         serializer=Booking_serializer(queryset,many=True)
+        
         return Response(serializer.data)
     def post(self, request, *args, **kwargs):
         serializer = Booking(data=request.data)

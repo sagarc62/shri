@@ -4,7 +4,7 @@ from django.utils import timezone
 class City(models.Model):
     name=models.CharField(max_length=56)
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 class Airport(models.Model):
     name=models.CharField(max_length=56)
