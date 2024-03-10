@@ -21,7 +21,7 @@ class Passenger(models.Model):
     age=models.PositiveSmallIntegerField()
     gender=models.CharField(max_length=10,choices=(('Male','Male'),('Female','Female')))
     def __str__(self):
-        return f'{self.first_name} {self.last_name}'
+        return f"{self.first_name}"
 
 
 # class Source_city(models.Model):
@@ -35,13 +35,13 @@ class Passenger(models.Model):
 #         return self.name
 
 class Booking(models.Model):
-    passenger=models.OneToOneField(Passenger,on_delete=models.CASCADE)
+    passenger=models.ManyToManyField(Passenger)
     date=models.DateTimeField(default=timezone.now)
-    source=models.OneToOneField(Airport,related_name='source',on_delete=models.CASCADE)
+    source=models.ForeignKey(Airport,related_name='source',on_delete=models.CASCADE)
 
-    destination = models.OneToOneField(Airport,related_name='destination', on_delete=models.CASCADE)
+    destination = models.ForeignKey(Airport,related_name='destination', on_delete=models.CASCADE)
     travel_class=models.CharField(max_length=10,choices=(('Premium','Premium'),('Economy','Economy')))
     def __str__(self):
-        return self.passenger
+        return f' {[x.first_name for x in self.passenger.all()]}'
 
 

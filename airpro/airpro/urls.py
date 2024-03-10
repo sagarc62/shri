@@ -21,6 +21,7 @@ from testapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth',include('rest_framework.urls')),
-    path('api',views.Booking_Listview.as_view()),
-    path('api/<int:pk>',views.Booking_Listview.as_view())
+#    path('api',views.Booking_Listview.as_view()),
+#    path('api/<int:pk>',views.Booking_Listview.as_view()),
+    path('sv', views.BookingListView.as_view())
 ]
